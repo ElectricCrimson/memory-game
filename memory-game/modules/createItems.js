@@ -22,7 +22,7 @@ function createCard(el, board) {
   const cardFront = createItem('img', 'card-front');
   cardFront.src = el.src;
   cardFront.alt = el.name;
-  cardFront.id = el.cardId;
+  cardFront.dataset.name = el.name;
 
   cardWrapper.append(cardBack, cardFront);
   board.append(cardWrapper);
