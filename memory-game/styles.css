@@ -11,7 +11,7 @@ html {
   background: -webkit-linear-gradient(180deg, #000000,#420000,#914f2b,#ff8800) no-repeat;
   background: linear-gradient(180deg, #000000,#420000,#914f2b,#ff8800) no-repeat;
   color: var(--color-accent);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .header,
@@ -66,6 +66,7 @@ html {
   height: 11rem;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .card-back,
@@ -76,7 +77,12 @@ html {
 
 .card-back {
   position: absolute;
-  /* display: none; */
+  top: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-wrapper.card-open .card-back{
+  top: 11rem;
 }
 
 .hidden {
