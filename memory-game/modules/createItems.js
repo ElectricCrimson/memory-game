@@ -1,6 +1,6 @@
 import { imgData } from '../assets/data/data.js';
 
-const body = document.querySelector('.body');
+export const body = document.querySelector('.body');
 
 const doubleData = [...imgData, ...imgData];
 console.log(doubleData);
@@ -14,6 +14,7 @@ function createItem(item, itemClass) {
 function createCard(el, board) {
   const cardWrapper = createItem('div', 'wrapper')
   cardWrapper.classList.add('card-wrapper');
+  cardWrapper.dataset.name = el.name;
 
   const cardBack = createItem('img', 'card-back');
   cardBack.src = './assets/img/back.png';
@@ -22,7 +23,6 @@ function createCard(el, board) {
   const cardFront = createItem('img', 'card-front');
   cardFront.src = el.src;
   cardFront.alt = el.name;
-  cardFront.dataset.name = el.name;
 
   cardWrapper.append(cardBack, cardFront);
   board.append(cardWrapper);
